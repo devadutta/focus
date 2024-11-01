@@ -5,9 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const differenceInTime = now.getTime() - startDate.getTime();
     const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
 
-    document.getElementById("heading").textContent = data.heading || "Welcome!";
+    document.getElementById("heading").textContent = data.heading || "Focus";
     document.getElementById("message").textContent =
-      data.message || "to your world";
-    document.getElementById("counter").textContent = `${differenceInDays} days`;
+      data.message || "is a force of nature";
+    document.getElementById("counter").textContent = isNaN(differenceInDays) 
+      ? ""
+      : `${differenceInDays} days`;
   });
 });
